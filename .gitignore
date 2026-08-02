@@ -1,0 +1,49 @@
+# ---------------------------------------------------------------------------
+# Netflix Content Analytics Platform — .gitignore
+# ---------------------------------------------------------------------------
+
+# --- Python bytecode / packaging ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Logs (keep the folder via .gitkeep, ignore the log files) ---
+logs/*.log
+logs/*.log.*
+
+# --- Generated data artifacts (rebuilt by the pipeline) ---
+# The raw dataset (data/raw/) IS committed so the project runs out of the box.
+# Cleaned CSVs and the SQLite database are generated, so we do not track them.
+data/processed/*.csv
+data/database/*.db
+data/database/*.sqlite
+data/database/*.sqlite3
+
+# --- Environment variables / secrets ---
+.env
+
+# --- IDE / editor ---
+.vscode/
+.idea/
+*.swp
+
+# --- OS cruft ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Never ignore the placeholder files that keep empty dirs tracked ---
+!**/.gitkeep
