@@ -41,6 +41,7 @@ DATABASE_PATH: Path = DATABASE_DIR / "netflix.db"               # Milestone 5
 
 # Generated reports
 DATA_PROFILE_REPORT: Path = REPORTS_DIR / "data_profile.md"     # Milestone 2
+DATA_QUALITY_REPORT: Path = REPORTS_DIR / "data_quality_report.md"  # Milestone 4
 
 # ---------------------------------------------------------------------------
 # Logging
