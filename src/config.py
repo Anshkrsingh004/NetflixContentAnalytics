@@ -38,6 +38,7 @@ REPORTS_DIR: Path = PROJECT_ROOT / "reports"  # generated analytical reports
 RAW_DATASET: Path = RAW_DATA_DIR / "netflix_titles.csv"          # source data
 CLEAN_DATASET: Path = PROCESSED_DATA_DIR / "netflix_clean.csv"   # Milestone 3
 DATABASE_PATH: Path = DATABASE_DIR / "netflix.db"               # Milestone 5
+SCHEMA_SQL: Path = SQL_DIR / "schema.sql"                       # Milestone 5
 
 # Generated reports
 DATA_PROFILE_REPORT: Path = REPORTS_DIR / "data_profile.md"     # Milestone 2
