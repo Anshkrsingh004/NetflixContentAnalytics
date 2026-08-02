@@ -35,6 +35,9 @@ data/database/*.sqlite3
 # --- Environment variables / secrets ---
 .env
 
+# --- Personal / private files (kept local, never pushed) ---
+interview.md
+
 # --- IDE / editor ---
 .vscode/
 .idea/

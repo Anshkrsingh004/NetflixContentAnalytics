@@ -29,6 +29,7 @@ NOTEBOOKS_DIR: Path = PROJECT_ROOT / "notebooks"
 SQL_DIR: Path = PROJECT_ROOT / "sql"
 ASSETS_DIR: Path = PROJECT_ROOT / "assets"
 LOGS_DIR: Path = PROJECT_ROOT / "logs"
+REPORTS_DIR: Path = PROJECT_ROOT / "reports"  # generated analytical reports
 
 # ---------------------------------------------------------------------------
 # Key files (created in later milestones — defined now so every module agrees
@@ -37,6 +38,9 @@ LOGS_DIR: Path = PROJECT_ROOT / "logs"
 RAW_DATASET: Path = RAW_DATA_DIR / "netflix_titles.csv"          # source data
 CLEAN_DATASET: Path = PROCESSED_DATA_DIR / "netflix_clean.csv"   # Milestone 3
 DATABASE_PATH: Path = DATABASE_DIR / "netflix.db"               # Milestone 5
+
+# Generated reports
+DATA_PROFILE_REPORT: Path = REPORTS_DIR / "data_profile.md"     # Milestone 2
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -50,6 +54,7 @@ _REQUIRED_DIRS: list[Path] = [
     PROCESSED_DATA_DIR,
     DATABASE_DIR,
     LOGS_DIR,
+    REPORTS_DIR,
 ]
 
 
