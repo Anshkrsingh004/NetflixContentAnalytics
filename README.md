@@ -117,7 +117,7 @@ The platform is built in milestones. Completed items are checked off.
 - [x] **M7 — Exploratory Data Analysis**
 - [x] **M8 — KPI & Metrics Engine**
 - [x] **M9 — Visualization Library**
-- [ ] **M10 — Recommendation Engine**
+- [x] **M10 — Recommendation Engine**
 - [ ] **M11 — Natural Language Search**
 - [ ] **M12 — Automated Insight Generation**
 - [ ] **M13 — Streamlit Dashboard (Core)**

@@ -49,6 +49,7 @@ SQL_ANALYTICS_REPORT: Path = REPORTS_DIR / "sql_analytics.md"   # Milestone 6
 EDA_REPORT: Path = REPORTS_DIR / "eda_report.md"               # Milestone 7
 KPI_REPORT: Path = REPORTS_DIR / "kpi_scorecard.md"            # Milestone 8
 VIZ_GALLERY: Path = REPORTS_DIR / "visualization_gallery.html"  # Milestone 9
+RECOMMENDATIONS_REPORT: Path = REPORTS_DIR / "recommendation_samples.md"  # M10
 
 # ---------------------------------------------------------------------------
 # Logging
