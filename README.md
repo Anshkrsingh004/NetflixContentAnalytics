@@ -6,7 +6,8 @@
 
 <!-- Badges (activated once the repo is public / deployed) -->
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
-![Status](https://img.shields.io/badge/status-in%20development-orange)
+![Status](https://img.shields.io/badge/status-feature%20complete-brightgreen)
+![Tests](https://img.shields.io/badge/tests-67%20passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
@@ -23,8 +24,38 @@ team — not a tutorial notebook.
 exploratory data analysis, KPI design, data visualization, a content-based
 recommendation engine, natural-language search, and an interactive dashboard.
 
-> 🚧 **Status:** In active development, built milestone by milestone.
-> This README grows with the project.
+> ✅ **Status:** Feature-complete (Milestones 1–15). Deployment and portfolio
+> polish (M16–M18) are in progress.
+
+---
+
+## ✨ Features
+
+- **📊 Overview dashboard** — headline KPIs (catalog size, growth CAGR, genre
+  diversity, international share) plus auto-generated **Key Insights** in plain
+  English.
+- **🔎 Explore** — filter the catalog by type, release year, rating, genre, and
+  country; every chart and the browsable table update live, with CSV export.
+- **🎯 Recommend** — content-based "titles similar to X" via TF-IDF + cosine
+  similarity, with the shared genres shown for explainability.
+- **🔍 Search** — natural-language search ("dark psychological thriller") ranked by
+  relevance across each title's text and metadata.
+- **🧱 Under the hood** — a normalized SQLite database (3NF), a reusable SQL
+  analytics layer, a KPI engine, a themed Plotly chart library, and a 67-test suite.
+
+### 🖼️ Screenshots
+
+**Overview — KPIs & automated insights**
+
+![Overview page](assets/screenshots/overview.jpg)
+
+**Explore — live filtering across the catalog**
+
+![Explore page](assets/screenshots/explore.jpg)
+
+**Recommend — explainable content-based recommendations**
+
+![Recommend page](assets/screenshots/recommend.jpg)
 
 ---
 
@@ -42,6 +73,16 @@ recommendation engine, natural-language search, and an interactive dashboard.
 
 ---
 
+## 🏗️ Architecture
+
+The platform is a **layered pipeline** — raw CSV → cleaning → normalized SQLite →
+analytics / ML → dashboard — where each layer exposes reusable objects (DataFrames,
+figures, typed values) to the one above, and each computed value has a single
+source of truth. See **[`docs/architecture.md`](docs/architecture.md)** for the
+full data-flow diagram and design principles.
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -50,20 +91,26 @@ NetflixContentAnalytics/
 │   ├── raw/            # Original dataset (netflix_titles.csv)
 │   ├── processed/      # Cleaned dataset (generated)
 │   └── database/       # SQLite database (generated)
-├── notebooks/          # Jupyter notebooks for EDA
-├── sql/                # Schema + analytical SQL queries
+├── notebooks/          # eda.ipynb — exploratory analysis narrative
+├── sql/
+│   ├── schema.sql      # Normalized 3NF schema
+│   └── analytics/      # Reusable analytical SQL queries
 ├── src/
 │   ├── config.py       # Central paths & constants (single source of truth)
 │   ├── logger.py       # Reusable logging setup
-│   ├── cleaning/       # Data-cleaning pipeline
-│   ├── analysis/       # KPIs & analytical logic
-│   ├── visualization/  # Reusable Plotly charts
-│   └── dashboard/      # Streamlit app
-├── assets/             # Images, screenshots, static files
-├── tests/              # pytest test suite
-├── logs/               # Runtime logs (generated)
+│   ├── cleaning/       # Data-cleaning pipeline (steps + validation)
+│   ├── database/       # Schema connection + ETL loader
+│   ├── analysis/       # Profiling, quality, SQL analytics, EDA, KPIs, insights
+│   ├── visualization/  # Themed Plotly chart library
+│   ├── recommender/    # TF-IDF content-based recommender
+│   ├── search/         # TF-IDF natural-language search
+│   └── dashboard/      # Streamlit app (app / data / views)
+├── reports/            # Generated reports, figures, and the viz gallery
+├── docs/               # Data dictionary, database & architecture docs
+├── tests/              # pytest suite (67 tests)
+├── assets/             # Screenshots and static files
+├── .streamlit/         # Dashboard theme
 ├── requirements.txt
-├── .gitignore
 └── README.md
 ```
 
@@ -138,7 +185,7 @@ The platform is built in milestones. Completed items are checked off.
 - [x] **M13 — Streamlit Dashboard (Core)**
 - [x] **M14 — Advanced Dashboard Features**
 - [x] **M15 — Testing**
-- [ ] **M16 — Documentation**
+- [x] **M16 — Documentation**
 - [ ] **M17 — Deployment**
 - [ ] **M18 — Interview Prep & Portfolio Polish**
 
@@ -152,18 +199,13 @@ date_added, release_year, rating, duration, listed_in, description`.
 
 ---
 
-## 🖼️ Screenshots
-
-_Dashboard screenshots will be added once the Streamlit app is built (M13–M14)._
-
----
-
 ## 📄 License
 
-Released under the MIT License. See [`LICENSE`](LICENSE) (added in M16).
+Released under the MIT License — see [`LICENSE`](LICENSE).
 
 ---
 
 ## 🙌 Contributing
 
-Contribution guidelines will be added in the documentation milestone (M16).
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for setup, project conventions, and how to
+run the tests.
