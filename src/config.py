@@ -39,10 +39,12 @@ RAW_DATASET: Path = RAW_DATA_DIR / "netflix_titles.csv"          # source data
 CLEAN_DATASET: Path = PROCESSED_DATA_DIR / "netflix_clean.csv"   # Milestone 3
 DATABASE_PATH: Path = DATABASE_DIR / "netflix.db"               # Milestone 5
 SCHEMA_SQL: Path = SQL_DIR / "schema.sql"                       # Milestone 5
+SQL_ANALYTICS_DIR: Path = SQL_DIR / "analytics"                # Milestone 6
 
 # Generated reports
 DATA_PROFILE_REPORT: Path = REPORTS_DIR / "data_profile.md"     # Milestone 2
 DATA_QUALITY_REPORT: Path = REPORTS_DIR / "data_quality_report.md"  # Milestone 4
+SQL_ANALYTICS_REPORT: Path = REPORTS_DIR / "sql_analytics.md"   # Milestone 6
 
 # ---------------------------------------------------------------------------
 # Logging

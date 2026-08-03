@@ -109,11 +109,11 @@ python -m src.logger     # writes a test line to logs/netflix_analytics.log
 The platform is built in milestones. Completed items are checked off.
 
 - [x] **M1 — Project Setup & Environment**
-- [ ] **M2 — Data Acquisition & Understanding**
-- [ ] **M3 — Data Cleaning Pipeline**
-- [ ] **M4 — Data Quality Report**
-- [ ] **M5 — Database Design & ETL**
-- [ ] **M6 — SQL Analytics Layer**
+- [x] **M2 — Data Acquisition & Understanding**
+- [x] **M3 — Data Cleaning Pipeline**
+- [x] **M4 — Data Quality Report**
+- [x] **M5 — Database Design & ETL**
+- [x] **M6 — SQL Analytics Layer**
 - [ ] **M7 — Exploratory Data Analysis**
 - [ ] **M8 — KPI & Metrics Engine**
 - [ ] **M9 — Visualization Library**
