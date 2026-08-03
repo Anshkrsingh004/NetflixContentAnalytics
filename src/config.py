@@ -30,6 +30,7 @@ SQL_DIR: Path = PROJECT_ROOT / "sql"
 ASSETS_DIR: Path = PROJECT_ROOT / "assets"
 LOGS_DIR: Path = PROJECT_ROOT / "logs"
 REPORTS_DIR: Path = PROJECT_ROOT / "reports"  # generated analytical reports
+FIGURES_DIR: Path = REPORTS_DIR / "figures"   # generated EDA charts (Milestone 7)
 
 # ---------------------------------------------------------------------------
 # Key files (created in later milestones — defined now so every module agrees
@@ -45,6 +46,7 @@ SQL_ANALYTICS_DIR: Path = SQL_DIR / "analytics"                # Milestone 6
 DATA_PROFILE_REPORT: Path = REPORTS_DIR / "data_profile.md"     # Milestone 2
 DATA_QUALITY_REPORT: Path = REPORTS_DIR / "data_quality_report.md"  # Milestone 4
 SQL_ANALYTICS_REPORT: Path = REPORTS_DIR / "sql_analytics.md"   # Milestone 6
+EDA_REPORT: Path = REPORTS_DIR / "eda_report.md"               # Milestone 7
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -59,6 +61,7 @@ _REQUIRED_DIRS: list[Path] = [
     DATABASE_DIR,
     LOGS_DIR,
     REPORTS_DIR,
+    FIGURES_DIR,
 ]
 
 

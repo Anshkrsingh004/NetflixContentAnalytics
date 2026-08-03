@@ -114,7 +114,7 @@ The platform is built in milestones. Completed items are checked off.
 - [x] **M4 — Data Quality Report**
 - [x] **M5 — Database Design & ETL**
 - [x] **M6 — SQL Analytics Layer**
-- [ ] **M7 — Exploratory Data Analysis**
+- [x] **M7 — Exploratory Data Analysis**
 - [ ] **M8 — KPI & Metrics Engine**
 - [ ] **M9 — Visualization Library**
 - [ ] **M10 — Recommendation Engine**
