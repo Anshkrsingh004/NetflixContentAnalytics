@@ -9,17 +9,18 @@
 ![Status](https://img.shields.io/badge/status-feature%20complete-brightgreen)
 ![Tests](https://img.shields.io/badge/tests-67%20passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
+[![Live App](https://img.shields.io/badge/live%20app-Streamlit-ff4b4b)](https://netflixcontentanalytics-hjkbsnkjhx4pnk9bcdam5z.streamlit.app/)
 
 ---
 
 ## 🚀 Live Demo
 
-The dashboard is deployment-ready on **Streamlit Community Cloud**. Once deployed,
-the live URL goes here → _add your `https://<app>.streamlit.app` link_.
+### ▶️ **[Launch the live dashboard](https://netflixcontentanalytics-hjkbsnkjhx4pnk9bcdam5z.streamlit.app/)**
 
-See **[`docs/deployment.md`](docs/deployment.md)** for the one-time deploy steps
-(main file: `src/dashboard/app.py`, Python 3.12) — the app self-bootstraps its
-database on first run, so there's no data to upload.
+Deployed on **Streamlit Community Cloud** — Overview, Explore, Recommend, and
+Search, live in your browser. See **[`docs/deployment.md`](docs/deployment.md)**
+for how it's deployed; the app self-bootstraps its database on first run, so
+there's no data to upload.
 
 ---
 
@@ -200,7 +201,7 @@ The platform is built in milestones. Completed items are checked off.
 - [x] **M14 — Advanced Dashboard Features**
 - [x] **M15 — Testing**
 - [x] **M16 — Documentation**
-- [ ] **M17 — Deployment**
+- [x] **M17 — Deployment**
 - [ ] **M18 — Interview Prep & Portfolio Polish**
 
 ---
