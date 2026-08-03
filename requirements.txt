@@ -2,20 +2,24 @@
 # Exactly what the deployed Streamlit dashboard needs (kept lean so cloud builds
 # are fast). Development/analysis extras — tests, notebooks, static charts — live
 # in requirements-dev.txt.
-# Pinned for reproducibility. Tested on Python 3.12.
+#
+# Versions are current releases that ship prebuilt wheels for modern Python
+# (3.11-3.14), so Streamlit Community Cloud installs them as wheels regardless of
+# the Python version it picks — no compiling from source, no conda needed.
+# Verified: app runs and all 67 tests pass on this stack.
 
 # --- Core data stack ---
-pandas==2.2.3
-numpy==2.1.3
+pandas==2.3.3
+numpy==2.5.1
 
 # --- Interactive visualization (dashboard charts) ---
 plotly==5.24.1
 
 # --- Machine learning (recommender + search: TF-IDF + cosine) ---
-scikit-learn==1.5.2
+scikit-learn==1.9.0
 
 # --- Dashboard ---
-streamlit==1.39.0
+streamlit==1.60.0
 
 # Note: SQLite ships with the Python standard library (module: sqlite3),
 # so there is no database driver to install here.

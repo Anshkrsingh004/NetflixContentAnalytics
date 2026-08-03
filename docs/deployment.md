@@ -26,24 +26,28 @@ they rebuild to 8,807 titles.)
    - **Repository:** `Anshkrsingh004/NetflixContentAnalytics`
    - **Branch:** `main`
    - **Main file path:** `src/dashboard/app.py`
-4. Open **Advanced settings** and set **Python version = 3.12** (matches
-   `requirements.txt`). The repo also pins this via a **`.python-version`** file,
-   which the cloud's `uv`-based build reads — important because a newer default
-   (e.g. Python 3.14) has no prebuilt wheels for the pinned packages and would try
-   to compile Pillow/pandas from source and fail.
-5. Click **Deploy**. The first load installs dependencies and builds the database
+4. Click **Deploy** (no Advanced-settings changes needed — see the note below).
+   The first load installs dependencies as prebuilt wheels and builds the database
    (a few seconds); subsequent loads are instant thanks to Streamlit's caching.
-6. Copy the resulting URL (e.g. `https://<app-name>.streamlit.app`) into the
+5. Copy the resulting URL (e.g. `https://<app-name>.streamlit.app`) into the
    **Live Demo** line of the README.
 
 Pushing to `main` afterwards triggers an **automatic redeploy**.
 
+> **Python version:** the dependencies are current releases that ship wheels for
+> modern Python (3.11-3.14), so the app installs cleanly on **whatever Python
+> Streamlit Cloud defaults to** — no version pinning, no `environment.yml`, no
+> conda. (This project originally pinned an older stack that only had wheels up to
+> 3.12; when Streamlit Cloud's default moved to 3.14, those packages tried to
+> compile from source and failed. Upgrading the stack removed the version
+> dependency entirely.)
+
 ## Continuous integration
 
 `.github/workflows/ci.yml` runs the full `pytest` suite on every push and pull
-request to `main` (Python 3.12, dependencies from `requirements.txt`). Because the
-tests build the database from the committed raw CSV, CI needs no extra data setup.
-The status badge in the README reflects the latest run.
+request to `main` (Python 3.12, dependencies from `requirements-dev.txt`). Because
+the tests build the database from the committed raw CSV, CI needs no extra data
+setup. The status badge in the README reflects the latest run.
 
 ## Resource notes
 
