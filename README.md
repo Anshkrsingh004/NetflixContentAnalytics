@@ -116,7 +116,7 @@ The platform is built in milestones. Completed items are checked off.
 - [x] **M6 — SQL Analytics Layer**
 - [x] **M7 — Exploratory Data Analysis**
 - [x] **M8 — KPI & Metrics Engine**
-- [ ] **M9 — Visualization Library**
+- [x] **M9 — Visualization Library**
 - [ ] **M10 — Recommendation Engine**
 - [ ] **M11 — Natural Language Search**
 - [ ] **M12 — Automated Insight Generation**
