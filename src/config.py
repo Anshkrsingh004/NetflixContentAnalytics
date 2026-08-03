@@ -47,6 +47,7 @@ DATA_PROFILE_REPORT: Path = REPORTS_DIR / "data_profile.md"     # Milestone 2
 DATA_QUALITY_REPORT: Path = REPORTS_DIR / "data_quality_report.md"  # Milestone 4
 SQL_ANALYTICS_REPORT: Path = REPORTS_DIR / "sql_analytics.md"   # Milestone 6
 EDA_REPORT: Path = REPORTS_DIR / "eda_report.md"               # Milestone 7
+KPI_REPORT: Path = REPORTS_DIR / "kpi_scorecard.md"            # Milestone 8
 
 # ---------------------------------------------------------------------------
 # Logging
