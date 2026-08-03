@@ -27,7 +27,10 @@ they rebuild to 8,807 titles.)
    - **Branch:** `main`
    - **Main file path:** `src/dashboard/app.py`
 4. Open **Advanced settings** and set **Python version = 3.12** (matches
-   `requirements.txt`).
+   `requirements.txt`). The repo also pins this via a **`.python-version`** file,
+   which the cloud's `uv`-based build reads — important because a newer default
+   (e.g. Python 3.14) has no prebuilt wheels for the pinned packages and would try
+   to compile Pillow/pandas from source and fail.
 5. Click **Deploy**. The first load installs dependencies and builds the database
    (a few seconds); subsequent loads are instant thanks to Streamlit's caching.
 6. Copy the resulting URL (e.g. `https://<app-name>.streamlit.app`) into the
