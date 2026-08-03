@@ -1,0 +1,11 @@
+# Streamlit theme — matches the project's validated visualization palette
+# (see src/visualization/theme.py). Keeps the app and the charts one system.
+[theme]
+primaryColor = "#2a78d6"          # categorical blue / accent
+backgroundColor = "#fcfcfb"       # chart surface
+secondaryBackgroundColor = "#f0efec"
+textColor = "#0b0b0b"
+font = "sans serif"
+
+[server]
+headless = true                   # don't auto-open a browser on `streamlit run`
