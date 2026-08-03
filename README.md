@@ -110,6 +110,13 @@ The app self-bootstraps: on first run it builds the cleaned dataset and the SQLi
 database from the raw CSV if they don't exist yet, then opens the interactive
 dashboard (Overview, Explore, Recommend, Search).
 
+### 6. Run the tests
+```bash
+pytest
+```
+A 67-test suite (unit + integration) covering the cleaning pipeline, quality/KPI
+scoring, the SQL analytics, the recommender, and search.
+
 ---
 
 ## 🗺️ Roadmap
@@ -130,7 +137,7 @@ The platform is built in milestones. Completed items are checked off.
 - [x] **M12 — Automated Insight Generation**
 - [x] **M13 — Streamlit Dashboard (Core)**
 - [x] **M14 — Advanced Dashboard Features**
-- [ ] **M15 — Testing**
+- [x] **M15 — Testing**
 - [ ] **M16 — Documentation**
 - [ ] **M17 — Deployment**
 - [ ] **M18 — Interview Prep & Portfolio Polish**
