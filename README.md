@@ -129,7 +129,7 @@ The platform is built in milestones. Completed items are checked off.
 - [x] **M11 — Natural Language Search**
 - [x] **M12 — Automated Insight Generation**
 - [x] **M13 — Streamlit Dashboard (Core)**
-- [ ] **M14 — Advanced Dashboard Features**
+- [x] **M14 — Advanced Dashboard Features**
 - [ ] **M15 — Testing**
 - [ ] **M16 — Documentation**
 - [ ] **M17 — Deployment**

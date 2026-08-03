@@ -21,7 +21,7 @@ from src.analysis import insights as insights_mod
 from src.analysis import kpis as kpis_mod
 from src.analysis import sql_analytics
 from src.database.connection import get_connection
-from src.recommender.engine import Recommender
+from src.recommender.engine import Recommender, load_corpus
 from src.search.engine import SearchEngine
 
 
@@ -99,6 +99,24 @@ def country_counts() -> pd.DataFrame:
             "WHERE c.country_name <> 'Unknown' GROUP BY c.country_name",
             conn,
         )
+
+
+@st.cache_data(show_spinner=False)
+def load_enriched_titles() -> pd.DataFrame:
+    """Titles joined with their genre/country/director/cast strings.
+
+    Reuses the M10 corpus loader for the denormalized metadata, then keeps every
+    ``titles`` column too — so the Explore page can filter by genre/country and
+    show a browsable table without re-deriving anything.
+    """
+    ensure_database()
+    with get_connection() as conn:
+        titles = pd.read_sql_query("SELECT * FROM titles", conn)
+        corpus = load_corpus(conn)
+    meta = corpus[["show_id", "genres", "directors", "cast", "countries"]]
+    enriched = titles.merge(meta, on="show_id", how="left")
+    fill = {c: "" for c in ("genres", "directors", "cast", "countries")}
+    return enriched.fillna(fill)
 
 
 @st.cache_data(show_spinner=False)

@@ -31,10 +31,14 @@ st.set_page_config(
 
 from src.dashboard import views  # noqa: E402  (import after set_page_config)
 
-navigation = st.navigation([
-    st.Page(views.overview, title="Overview", icon="📊", default=True),
-    st.Page(views.explore, title="Explore", icon="🔎"),
-    st.Page(views.recommend, title="Recommend", icon="🎯"),
-    st.Page(views.search, title="Search", icon="🔍"),
-])
-navigation.run()
+# Build the pages once and stash them so views can navigate programmatically
+# (e.g. Explore's "Recommend similar" jumps to the Recommend page).
+pages = {
+    "overview": st.Page(views.overview, title="Overview", icon="📊", default=True),
+    "explore": st.Page(views.explore, title="Explore", icon="🔎"),
+    "recommend": st.Page(views.recommend, title="Recommend", icon="🎯"),
+    "search": st.Page(views.search, title="Search", icon="🔍"),
+}
+st.session_state["_pages"] = pages
+
+st.navigation(list(pages.values())).run()
