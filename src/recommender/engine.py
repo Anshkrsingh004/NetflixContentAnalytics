@@ -53,8 +53,12 @@ SAMPLE_SEEDS = [
 # ---------------------------------------------------------------------------
 # Corpus assembly
 # ---------------------------------------------------------------------------
-def _load_corpus(conn) -> pd.DataFrame:
-    """Rebuild one denormalized row per title (from the normalized bridges)."""
+def load_corpus(conn) -> pd.DataFrame:
+    """Rebuild one denormalized row per title (from the normalized bridges).
+
+    Public because the M11 search index reuses this exact corpus (it only builds
+    a different *document* representation on top of it).
+    """
     titles = pd.read_sql_query(
         "SELECT show_id, title, type, rating, release_year, description FROM titles",
         conn,
@@ -135,7 +139,7 @@ class Recommender:
     @classmethod
     def from_connection(cls, conn) -> "Recommender":
         """Load the corpus, build soups, and fit the TF-IDF matrix."""
-        corpus = _load_corpus(conn)
+        corpus = load_corpus(conn)
         corpus["soup"] = corpus.apply(_build_soup, axis=1)
         vectorizer = TfidfVectorizer(stop_words="english", min_df=2)
         matrix = vectorizer.fit_transform(corpus["soup"])
