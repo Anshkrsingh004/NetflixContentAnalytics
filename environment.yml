@@ -1,0 +1,17 @@
+# Conda environment for Streamlit Community Cloud.
+#
+# WHY THIS EXISTS: Streamlit Cloud was defaulting to Python 3.14, which has no
+# prebuilt wheels for this project's pinned dependencies — so it tried to compile
+# Pillow (a Streamlit dependency, capped <11) and pandas from source and failed on
+# a missing zlib header. Neither a `.python-version` file nor the deploy UI reliably
+# forced an older Python. Streamlit Cloud *does* honor an environment.yml (it builds
+# a conda env), so we use it purely to pin the Python version; the actual packages
+# are still installed from requirements.txt via pip (as prebuilt 3.12 wheels).
+name: netflix-analytics
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - "-r requirements.txt"
