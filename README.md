@@ -4,11 +4,22 @@
 > global content library and turns it into executive-ready insights —
 > built with Python, SQL (SQLite), Pandas, Plotly, and Streamlit.
 
-<!-- Badges (activated once the repo is public / deployed) -->
+[![CI](https://github.com/Anshkrsingh004/NetflixContentAnalytics/actions/workflows/ci.yml/badge.svg)](https://github.com/Anshkrsingh004/NetflixContentAnalytics/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Status](https://img.shields.io/badge/status-feature%20complete-brightgreen)
 ![Tests](https://img.shields.io/badge/tests-67%20passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
+
+---
+
+## 🚀 Live Demo
+
+The dashboard is deployment-ready on **Streamlit Community Cloud**. Once deployed,
+the live URL goes here → _add your `https://<app>.streamlit.app` link_.
+
+See **[`docs/deployment.md`](docs/deployment.md)** for the one-time deploy steps
+(main file: `src/dashboard/app.py`, Python 3.12) — the app self-bootstraps its
+database on first run, so there's no data to upload.
 
 ---
 
