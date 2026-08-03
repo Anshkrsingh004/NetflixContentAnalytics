@@ -10,8 +10,8 @@ conventions below are welcome and expected.
 python -m venv .venv
 # Windows:  .\.venv\Scripts\Activate.ps1
 # macOS/Linux:  source .venv/bin/activate
-pip install -r requirements.txt
-pytest                      # confirm a green baseline (67 tests)
+pip install -r requirements-dev.txt    # app + notebooks + tests
+pytest                                  # confirm a green baseline (67 tests)
 ```
 
 The database and cleaned dataset are generated artifacts (git-ignored). Any entry

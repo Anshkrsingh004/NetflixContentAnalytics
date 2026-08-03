@@ -48,3 +48,9 @@ The status badge in the README reflects the latest run.
   two small TF-IDF matrices — and stays well within it.
 - Everything Streamlit needs is configured in-repo:
   `requirements.txt` (dependencies) and `.streamlit/config.toml` (theme).
+- **`requirements.txt` is deliberately lean** — only the five packages the running
+  app imports (`streamlit`, `pandas`, `numpy`, `plotly`, `scikit-learn`). The
+  dev-only extras (matplotlib, Jupyter, pytest) live in `requirements-dev.txt`,
+  which Streamlit Cloud does **not** install, so builds stay fast. If a deploy
+  hangs in the build ("in the oven"), a bloated requirements file is the usual
+  cause.

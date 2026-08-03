@@ -151,8 +151,11 @@ source .venv/bin/activate
 
 ### 3. Install dependencies
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-dev.txt    # full dev stack (app + notebooks + tests)
 ```
+The deployed app installs only the lean **`requirements.txt`** (runtime deps);
+`requirements-dev.txt` is a superset that adds matplotlib, Jupyter, and pytest for
+local development.
 
 ### 4. Verify the setup
 ```bash

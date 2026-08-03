@@ -1,27 +1,21 @@
-# Netflix Content Analytics Platform — Python dependencies
-# Pinned for reproducibility. Install with:  pip install -r requirements.txt
-# Tested on Python 3.12.
+# Netflix Content Analytics Platform — RUNTIME dependencies
+# Exactly what the deployed Streamlit dashboard needs (kept lean so cloud builds
+# are fast). Development/analysis extras — tests, notebooks, static charts — live
+# in requirements-dev.txt.
+# Pinned for reproducibility. Tested on Python 3.12.
 
 # --- Core data stack ---
 pandas==2.2.3
 numpy==2.1.3
 
-# --- Visualization ---
+# --- Interactive visualization (dashboard charts) ---
 plotly==5.24.1
-matplotlib==3.9.2
 
-# --- Machine learning (recommendation engine, Milestone 10) ---
+# --- Machine learning (recommender + search: TF-IDF + cosine) ---
 scikit-learn==1.5.2
 
-# --- Dashboard (Milestone 13) ---
+# --- Dashboard ---
 streamlit==1.39.0
-
-# --- Notebooks (EDA, Milestone 7) ---
-jupyter==1.1.1
-ipykernel==6.29.5
-
-# --- Testing (Milestone 15) ---
-pytest==8.3.3
 
 # Note: SQLite ships with the Python standard library (module: sqlite3),
 # so there is no database driver to install here.

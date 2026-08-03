@@ -1,0 +1,17 @@
+# Development / analysis dependencies — a SUPERSET of the runtime requirements.
+# Use this for local work (running the tests, the EDA notebook, generating the
+# static matplotlib reports). The deployed app uses only requirements.txt.
+#
+#   pip install -r requirements-dev.txt
+
+-r requirements.txt
+
+# --- Static visualization (EDA charts + report figures, Milestone 7) ---
+matplotlib==3.9.2
+
+# --- Notebooks (EDA narrative, Milestone 7) ---
+jupyter==1.1.1
+ipykernel==6.29.5
+
+# --- Testing (Milestone 15) ---
+pytest==8.3.3
